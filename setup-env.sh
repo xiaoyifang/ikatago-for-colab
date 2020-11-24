@@ -56,7 +56,10 @@ WEIGHT_URL=`grep "^$WEIGHT_FILE " ./weight_urls.txt | cut -d ' ' -f2`
 echo "Using Weight URL: " $WEIGHT_URL
 
 #download the binarires
-wget --quiet https://github.com/kinfkong/ikatago-for-colab/releases/download/$RELEASE_VERSION/katago-$KATAGO_BACKEND -O ./data/bins/katago
+wget --quiet https://github.com/lightvector/KataGo/releases/download/v1.7.0/katago-v1.7.0-gpu-cuda10.2-linux-x64.zip -O katago1.7.zip
+unzip -qq  katago1.7.zip
+mv katago ./data/bins/katago
+#wget --quiet https://github.com/kinfkong/ikatago-for-colab/releases/download/$RELEASE_VERSION/katago-$KATAGO_BACKEND -O ./data/bins/katago
 chmod +x ./data/bins/katago
 
 mkdir -p /root/.katago/
