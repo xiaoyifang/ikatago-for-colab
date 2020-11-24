@@ -42,7 +42,6 @@ echo "Using Katago Backend: " $KATAGO_BACKEND
 echo "Using Katago Weight: " $WEIGHT_FILE
 
 
-
 cd /content
 apt install --yes libzip4 1>/dev/null
 if [ ! -d work ]
