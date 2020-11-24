@@ -55,7 +55,7 @@ echo "Using Katago Weight: " $WEIGHT_FILE
 apt-get install gcc cmake -y
 wget https://libzip.org/download/libzip-1.5.2.tar.gz -O  /content/libzip-1.5.2.tar.gz
 tar -zxvf  /content/libzip-1.5.2.tar.gz -C /content/
-
+cd /content/libzip-1.5.2
 cmake /content/libzip-1.5.2/
 make && make install
 ln -s /usr/local/lib/libzip.so.5 /usr/lib
