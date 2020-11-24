@@ -50,7 +50,18 @@ echo "Using Katago Weight: " $WEIGHT_FILE
 
 
 cd /content
-apt install --yes libzip4 1>/dev/null
+#apt install --yes libzip4 1>/dev/null
+
+#libzip5
+apt-get install gcc cmake -y
+wget https://libzip.org/download/libzip-1.5.2.tar.gz -O  /content/libzip-1.5.2.tar.gz
+tar -zxvf  /content/libzip-1.5.2.tar.gz -C /content/
+cd /content/libzip-1.5.2
+
+cmake /content/libzip-1.5.2/
+make && make install
+ln -s /usr/local/lib/libzip.so.5 /usr/lib
+
 if [ ! -d work ]
 then
     wget --quiet https://github.com/kinfkong/ikatago-for-colab/releases/download/$RELEASE_VERSION/work.zip -O work.zip
