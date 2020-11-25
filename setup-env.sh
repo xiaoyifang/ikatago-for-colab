@@ -9,7 +9,7 @@ GPU_NAME=`nvidia-smi -q | grep "Product Name" | cut -d":" -f2 | tr -cd '[:alnum:
 detect_auto_backend () {
   if [[ "$GPU_NAME" =~ .*"TeslaT4".* ]]
   then
-    KATAGO_BACKEND="CUDA"
+    KATAGO_BACKEND="OPENCL"
   elif [[ "$GPU_NAME" =~ .*"TeslaP100".* ]]
   then
     KATAGO_BACKEND="CUDA"
