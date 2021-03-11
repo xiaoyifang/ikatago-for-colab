@@ -44,6 +44,7 @@ cmake /content/libzip-1.5.2/
 make && make install
 ln -s /usr/local/lib/libzip.so.5 /usr/lib
 
+mkdir -p /content/work/data/{bins,weights}
 cd /content/work
 WEIGHT_URL="https://media.katagotraining.org/uploaded/networks/models/kata1/kata1-b40c256-s6809346304-d1651897329.bin.gz"
 echo "Using Weight URL: " $WEIGHT_URL
